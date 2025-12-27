@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuen Dispo Mail - Disposable Email Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-envelope"></i> Yuen Dispo Mail</h1>
+            <p>Professional Disposable Email Generator</p>
+            <button id="darkModeToggle" class="dark-mode-btn">
+                <i class="fas fa-moon"></i>
+            </button>
+        </header>
+
+        <div class="main-content">
+            <div class="email-search">
+                <span class="section-label">Quick Access</span>
+                <div class="search-controls">
+                    <input type="email" id="searchEmail" placeholder="Access any email address...">
+                    <button id="searchBtn" class="btn primary">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="email-generator">
+                <span class="section-label">Generate Address</span>
+                <div class="generator-controls">
+                    <select id="domainSelect">
+                        <option value="harakirimail.com">harakirimail.com</option>
+                    </select>
+                    <button id="generateBtn" class="btn primary">
+                        <i class="fas fa-plus"></i> Create Random Email
+                    </button>
+                    <button id="refreshBtn" class="btn secondary">
+                        <i class="fas fa-sync-alt"></i> Refresh Inbox
+                    </button>
+                </div>
+
+                <div class="current-email" id="currentEmailDiv" style="display: none;">
+                    <span class="section-label">Active Address</span>
+                    <div class="email-display">
+                        <span id="currentEmail"></span>
+                        <button id="copyBtn" class="btn secondary">
+                            <i class="fas fa-copy"></i> Copy
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="inbox-section">
+                <div class="inbox-header">
+                    <h2>Inbox</h2>
+                    <div class="auto-refresh">
+                        <label>
+                            <input type="checkbox" id="autoRefresh"> Auto Refresh (10s)
+                        </label>
+                    </div>
+                </div>
+                <div id="emailList" class="email-list">
+                    <div class="no-emails">No emails yet. Generate an email to start receiving messages.</div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Yuen Dispo Mail - All rights reserved</p>
+        </footer>
+    </div>
+
+    <div id="emailModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="emailContent"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
